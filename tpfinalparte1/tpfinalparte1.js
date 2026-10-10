@@ -3,7 +3,7 @@
 //Comisión: 4
 //Profesor: Leonardo Garay
 //Gómez Sofía: https://youtu.be/CJoF8VeA1DY
-//Natanael Grilli:  
+//Natanael Grilli: https://youtu.be/YDpie2bENGo 
 
 // VARIABLES PANTALLA Y MÁQUINA DE ESTADOS
 let pantalla = 0;
@@ -215,7 +215,7 @@ function mouseClicked() {
 //INDY Y SU PADRE FRENTE A ACERTIJO
   else if (pantalla === 17) {
     //VIENTO
-    clickear(225, 220, 100, 110, 18);
+    clickear(225, 220, 100, 110, 20);
     //SOL
     clickear(355, 220, 105, 110, 19);
     //ESPIRAL
