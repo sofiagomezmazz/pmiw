@@ -21,7 +21,6 @@ function pantalla1() {
   }
 }
 
-
 //PANTALLA 2 INDY ABRE EL MISTERIOSO PAQUETE
 function pantalla2() {
   image(imagenes[2], 0, 0, width, height);
@@ -86,7 +85,6 @@ function pantalla3() {
     text("Cerrar el diario y no investigar", width/2, height-15);
   }
 }
-
 
 //PANTALLA 4 CATACUMBAS: TRES CAMINOS
 function pantalla4() {

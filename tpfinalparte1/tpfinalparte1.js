@@ -1,3 +1,10 @@
+//Temática: Juego
+//Indiana Jones
+//Comisión: 4
+//Profesor: Leonardo Garay
+//Gómez Sofía: https://youtu.be/CJoF8VeA1DY
+//Natanael Grilli:  
+
 // VARIABLES PANTALLA Y MÁQUINA DE ESTADOS
 let pantalla = 0;
 let imagenes = [];

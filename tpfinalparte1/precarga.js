@@ -42,6 +42,4 @@ function preload() {
   for (let i = 0; i < NUBES_IMG.length; i++) {
     nubes.push(loadImage("data/nube" + NUBES_IMG[i] + ".png"));
   }
-
-
 }
