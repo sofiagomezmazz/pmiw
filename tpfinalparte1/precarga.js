@@ -1,6 +1,6 @@
 function preload() {
   //CARGA DE IMAGENES!!
-  for (let i = 0; i <= 15; i++) {
+  for (let i = 0; i <= 20; i++) {
     imagenes.push(loadImage("data/pantalla" + i + ".png"));
   }
 
@@ -29,7 +29,7 @@ function preload() {
   puerta = loadImage("data/puerta1.png");
   daga = loadImage("data/daga1.png");
   mechero = loadImage("data/mechero1.png");
-  
+  puerta = loadImage("data/puerta1.png");
   //sonidos
   musicaintro = loadSound("data/screen.mp3");
   explosion = loadSound("data/explosion.mp3");

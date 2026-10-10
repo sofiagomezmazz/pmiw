@@ -7,7 +7,7 @@ function pantalla1() {
   textSize(16);
   textAlign(CENTER, TOP);
   let diarioTexto = mistextos[0] + "\n" + mistextos[1] + "\n" + mistextos[2];
-  text(diarioTexto, width / 2, 32);
+  text(diarioTexto, width/2, 32);
 
   //si el mousse está sobre el paquete
   if (mouseX > 360 && mouseX < 490 && mouseY > 260 && mouseY < 340) {
@@ -30,7 +30,7 @@ function pantalla2() {
   fill(255);
   textSize(17);
   textAlign(CENTER, TOP);
-  text(mistextos[4], width / 2, 45);
+  text(mistextos[4], width/2, 45);
 
   // al pasar el mouse por el paquete:
   if (mouseX > 180 && mouseX < 500 && mouseY > 230 && mouseY < 380) {
@@ -38,7 +38,7 @@ function pantalla2() {
         fill(255, 230, 140);
     textSize(15);
     textAlign(CENTER, BOTTOM);
-    text("Abrir el paquete", width / 2, height - 15);fill(255);
+    text("Abrir el paquete", width/2, height-15);fill(255);
     textSize(13);
     textAlign(CENTER, CENTER);
     text(mistextos[5], mouseX, mouseY - 29);
@@ -47,7 +47,7 @@ function pantalla2() {
     fill(255);
     textSize(17);
     textAlign(CENTER, TOP);
-    text(mistextos[4], width / 2, 45);
+    text(mistextos[4], width/2, 45);
   }
 }
 
@@ -62,9 +62,9 @@ function pantalla3() {
   textSize(15);
   textAlign(CENTER, TOP);
   let diarioTexto = mistextos[6] + "\n" + mistextos[7] + "\n" + mistextos[8];
-  text(diarioTexto, width / 2, 28);
+  text(diarioTexto, width/2, 28);
   textSize(18);
-  text(mistextos[9], width / 2, 300);
+  text(mistextos[9], width/2, 300);
   //HASTA ACÁ EL TEXTO 
 
   // si el mouse está sobre la imagen de las catacumbas, se iluminan!!
@@ -74,7 +74,7 @@ function pantalla3() {
     fill(255, 230, 140);
     textSize(15);
     textAlign(CENTER, BOTTOM);
-    text("Ir hacia las catacumbas", width / 2, height - 15);
+    text("Ir hacia las catacumbas", width/2, height-15);
   } 
   // Lo mismo que pasa con las catacumbas, pero con la correa del diario de Henry...
   else if (mouseX > 650 && mouseX < 790 && mouseY > 173 && mouseY < 292) {
@@ -83,7 +83,7 @@ function pantalla3() {
     fill(255, 230, 140);
     textSize(15);
     textAlign(CENTER, BOTTOM);
-    text("Cerrar el diario y no investigar", width / 2, height - 15);
+    text("Cerrar el diario y no investigar", width/2, height-15);
   }
 }
 
@@ -98,7 +98,7 @@ function pantalla4() {
     fill(255, 230, 140);
     textSize(15);
     textAlign(CENTER, BOTTOM);
-    text(mistextos[14], width / 2, height - 15);
+    text(mistextos[14], width/2, height-15);
     
   }
   // si el mouse pasa por arriba (centro)
@@ -107,7 +107,7 @@ function pantalla4() {
     fill(255, 230, 140);
     textSize(15);
     textAlign(CENTER, BOTTOM);
-    text(mistextos[13], width / 2, height - 15);
+    text(mistextos[13], width/2, height-15);
   }
   // si el mouse pasa por el puente (derecha)
   else if (mouseX > 550 && mouseX < 800 && mouseY > 40 && mouseY < 440) {
@@ -115,7 +115,7 @@ function pantalla4() {
     fill(255, 230, 140);
     textSize(15);
     textAlign(CENTER, BOTTOM);
-    text(mistextos[15], width / 2, height - 15);
+    text(mistextos[15], width/2, height-15);
   }  
   
   //TEXTO NO INTERACTIVO
@@ -124,7 +124,7 @@ function pantalla4() {
   fill(255);
   textSize(15);
   textAlign(CENTER, TOP);
-  text(mistextos[11] + "\n" + mistextos[12], width / 2, 15);
+  text(mistextos[11] + "\n" + mistextos[12], width/2, 15);
   //HASTA ACÁ EL TEXTO
 
 }
@@ -139,7 +139,7 @@ function pantalla5() {
   fill(255);
   textSize(16);
   textAlign(CENTER, CENTER);
-  text(mistextos[10], width / 2, 55);
+  text(mistextos[10], width/2, 55);
 
 
 
@@ -182,7 +182,7 @@ function pantalla6() {
   textSize(15);
   textAlign(CENTER, TOP);
   let diarioTexto = mistextos[19] + "\n" + mistextos[20] + "\n" + mistextos[21];
-  text(diarioTexto, width / 2, 22);
+  text(diarioTexto, width/2, 22);
 
   //BOTÓN OPCI´+ONN CORRER
   if (mouseEnBoton(520, 320, 120, 110)) {
@@ -219,7 +219,7 @@ if (mouseEnBoton(260, 325, 260, 70)) {
   textSize(15);
   textAlign(CENTER, TOP);
   let diarioTexto = mistextos[16] + "\n" + mistextos[17] + "\n" + mistextos[18];
-  text(diarioTexto, width / 2, 32);
+  text(diarioTexto, width/2, 32);
 }
 
 //TE CAÉS DEL PUENTE (FINAL MALO)
@@ -271,7 +271,7 @@ function pantalla11() {
     fill(255, 230, 140);
     textSize(16);
     textAlign(CENTER, BOTTOM);
-    text("Subirse al avión", width / 2, height - 15);
+    text("Subirse al avión", width/2, height-15);
   }
 }
 
@@ -279,9 +279,13 @@ function pantalla11() {
 //EL AVIÓN TE DEJA EN LA PUERTA DEL TEMPLO DEL SANTO GRIAL!!
 function pantalla12() {
   image(imagenes[12], 0, 0, width, height);
-if (mouseX > 485 && mouseX < 700 && mouseY > 45 && mouseY < 370) {
-  // IAMGEN DE LA PUERTA CON BRILLO
-  image(puerta, 485, 44, 240, 266);
+  // al pasar el mosue se generá un rectangulo porque ya no quiero cargar más imagenes al programa T.T
+  if (mouseX > 505 && mouseX < 720 && mouseY > 65 && mouseY < 290) {
+    fill(255, 215, 0, 60);
+    stroke(255, 230, 140, 200);
+    strokeWeight(2);
+    rect(505, 65, 215, 225, 6);
+    noStroke();
     fill(255, 230, 140);
     textSize(16);
     textAlign(CENTER, BOTTOM);
@@ -292,35 +296,38 @@ if (mouseX > 485 && mouseX < 700 && mouseY > 45 && mouseY < 370) {
 //BIFURCACIÓN: TE SECUESTRARON LOS NAZIS Y TE TENÉS QUE LIBERAR
 function pantalla13() {
   image(imagenes[13], 0, 0, width, height);
-   if (mouseX > 75 && mouseX < 150 && mouseY > 290 && mouseY < 410) {
-  //DAGA
-  image(daga, 95, 335, 80, 75);
+  if (mouseX > 75 && mouseX < 150 && mouseY > 290 && mouseY < 410) {
+    //DAGA
+    image(daga, 95, 335, 80, 75);
     fill(255, 230, 140);
     textSize(16);
     textAlign(CENTER, BOTTOM);
-    text("Intentar escapar con la daga", width / 2, height - 15);
-    }
- else if (mouseX > 156 && mouseX < 235 && mouseY > 335 && mouseY < 360) {
-  //MECHERO
- image(mechero, 132, 325, 55, 55);
-    
-    //texto de la opción en la parte inferior de la pantalla
+    text("Intentar escapar con la daga", width/2, height-15);
+  }
+  else if (mouseX > 156 && mouseX < 235 && mouseY > 335 && mouseY < 360) {
+    //MECHERO
+    image(mechero, 132, 325, 55, 55);
     fill(255, 230, 140);
     textSize(16);
     textAlign(CENTER, BOTTOM);
-    text("intentar escapar con el mechero", width / 2, height - 15);
-   }
- 
+    text("intentar escapar con el mechero", width/2, height-15);
+  }
 }
 
 function pantalla14() {
-image(imagenes[14], 0, 0, width, height);
-
+  image(imagenes[14], 0, 0, width, height);
+  //MOUSE SOBRE EL TEMPLO
+  if (mouseX > 620 && mouseX < 800 && mouseY > 60 && mouseY < 380) {
+    image(puerta, 0, 0, width, height);
+    fill(255, 230, 140);
+    textSize(16);
+    textAlign(CENTER, BOTTOM);
+    text("Entrar al templo", width/2, height-15);
+  }
 }
 
 function pantalla15() {
 image(imagenes[15], 0, 0, width, height);
-
  if (mouseEnBoton(260, 325, 260, 70)) {
     tint(255, 255);
   } else {
@@ -331,6 +338,139 @@ image(imagenes[15], 0, 0, width, height);
 
 }
 
+//LLEGA AL ACERTIJO SOLO INDY
+function pantalla16() {
+  image(imagenes[16], 0, 0, 800, 450);
+//ACERTIJO DEL JUEGOOO
+  //VIENTO
+  if (mouseX > 225 && mouseX < 325 && mouseY > 220 && mouseY < 330) {
+    fill(255, 215, 0, 70);
+    stroke(255, 230, 140, 200);
+    strokeWeight(2);
+    rect(225, 220, 100, 110, 4);
+    noStroke();
+    fill(255, 230, 140);
+    textSize(15);
+    textAlign(CENTER, BOTTOM);
+    text("Elegir el símbolo del viento", width/2, height-15);
+  }
+  //ESTRELLA
+  else if (mouseX > 355 && mouseX < 460 && mouseY > 220 && mouseY < 330) {
+    fill(255, 215, 0, 70);
+    stroke(255, 230, 140, 200);
+    strokeWeight(2);
+    rect(355, 220, 105, 110, 4);
+    noStroke();
+    fill(255, 230, 140);
+    textSize(15);
+    textAlign(CENTER, BOTTOM);
+    text("Elegir el símbolo del sol", width/2, height-15);
+  }
+  //AGUA
+  else if (mouseX > 490 && mouseX < 595 && mouseY > 220 && mouseY < 330) {
+    fill(255, 215, 0, 70);
+    stroke(255, 230, 140, 200);
+    strokeWeight(2);
+    rect(490, 220, 105, 110, 4);
+    noStroke();
+    fill(255, 230, 140);
+    textSize(15);
+    textAlign(CENTER, BOTTOM);
+    text("Elegir el símbolo del agua", width/2, height-15);
+  }
+  noStroke();
+}
 
-//function pantalla16() {
-//}
+//LLEGAN AL ACERTIJO HENRY E INDY
+function pantalla17() {
+  image(imagenes[17], 0, 0, width, height);
+  //ACERTIJO DEL JUEGOOO
+  //VIENTO
+  if (mouseX > 225 && mouseX < 325 && mouseY > 220 && mouseY < 330) {
+    fill(255, 215, 0, 70);
+    stroke(255, 230, 140, 200);
+    strokeWeight(2);
+    rect(225, 220, 100, 110, 4);
+    noStroke();
+    fill(255, 230, 140);
+    textSize(15);
+    textAlign(CENTER, BOTTOM);
+    text("Elegir el símbolo del viento", width/2, height-15);
+  }
+  //ESTRELLA
+  else if (mouseX > 355 && mouseX < 460 && mouseY > 220 && mouseY < 330) {
+    fill(255, 215, 0, 70);
+    stroke(255, 230, 140, 200);
+    strokeWeight(2);
+    rect(355, 220, 105, 110, 4);
+    noStroke();
+    fill(255, 230, 140);
+    textSize(15);
+    textAlign(CENTER, BOTTOM);
+    text("Elegir el símbolo del sol", width/2, height-15);
+  }
+  //AGUA
+  else if (mouseX > 490 && mouseX < 595 && mouseY > 220 && mouseY < 330) {
+    fill(255, 215, 0, 70);
+    stroke(255, 230, 140, 200);
+    strokeWeight(2);
+    rect(490, 220, 105, 110, 4);
+    noStroke();
+    fill(255, 230, 140);
+    textSize(15);
+    textAlign(CENTER, BOTTOM);
+    text("Elegir el símbolo del agua", width/2, height-15);
+  }
+  noStroke();
+}
+
+//FINAL BUENO SANTO GRIAL
+function pantalla18() {
+  image(imagenes[20], 0, 0, width, height);
+  // TEXTO DEL FINAL BUENO
+  fill(0, 175);
+  rect(55, 25, 690, 60, 6);
+  fill(255);
+  textSize(16);
+  textAlign(CENTER, CENTER);
+  text("¡Descifraste el acertijo! Indy y Henry encuentran el verdadero Santo Grial.", width/2, 55);
+  // BOTÓN REINICIAR
+  if (mouseEnBoton(260, 325, 260, 70)) {
+    tint(255, 255);
+  } else {
+    tint(255, 170);
+  }
+  image(botonreini, 250, 280, 280, 160);
+  noTint();
+}
+//FINAL MALO: TRAMPA DEL ACERTIJO INDY Y SU OADRE
+function pantalla19() {
+  image(imagenes[19], 0, 0, width, height);
+  //BOTÓN REINICIAR
+  if (mouseEnBoton(260, 325, 260, 70)) {
+    tint(255, 255);
+  } else {
+    tint(255, 170);
+  }
+  image(botonreini, 250, 280, 280, 160);
+  noTint();
+}
+
+//FINAL MALO. TRAMPA DEL ACERTIJO SOLO INDIANA JONES
+function pantalla20() {
+  image(imagenes[18], 0, 0, width, height);
+  //TEXTO EXPLICATIVO DEL FINAL MALO
+  fill(0, 175);
+  rect(55, 25, 690, 60, 6);
+  fill(255);
+  textSize(16);
+  textAlign(CENTER, CENTER);
+  text("Elegiste el símbolo equivocado. Una trampa milenaria se activa en el templo.", width/2, 55);
+  if (mouseEnBoton(260, 325, 260, 70)) {
+    tint(255, 255);
+  } else {
+    tint(255, 170);
+  }
+  image(botonreini, 250, 280, 280, 160);
+  noTint();
+}

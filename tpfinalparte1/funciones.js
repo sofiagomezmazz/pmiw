@@ -27,7 +27,7 @@ function clickear(x, y, w, h, pantalldirigida) {
 }
 
 
-// FUNCIOONES DE LA ANIMACIÓN:
+//FUNCIOONES DE LA ANIMACIÓN:
 function cargarAccion(nombre, cantidad) {
   let frames = [];
   for (let i = 0; i < cantidad; i++) {

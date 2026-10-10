@@ -57,6 +57,11 @@ let explosion;
 let latigo;
 let avisosonido = true;
 
+
+//VARIABLES DEL ACERTIJO FINAL::
+let simbolos = -1;
+let acertijo = false;
+
 function setup() {
   createCanvas(800, 450);
   logo.resize(450, 0); //la imagen es muy pesada y realentiza la animacion
@@ -68,7 +73,6 @@ function setup() {
   textSize(24);
   noStroke();
 }
-
 function draw() {
   //console.log("x " + mouseX + "  | Y " + mouseY)
   background(25);
@@ -89,11 +93,15 @@ function draw() {
   else if (pantalla === 13) pantalla13();
   else if (pantalla === 14) pantalla14();
   else if (pantalla === 15) pantalla15();
+  else if (pantalla === 16) pantalla16();
+  else if (pantalla === 17) pantalla17();
+  else if (pantalla === 18) pantalla18(); 
+  else if (pantalla === 19) pantalla19(); 
+  else if (pantalla === 20) pantalla20(); 
   //IR AÑADIENDO MÁS PANTALLAS A MEDIDA QUE VAYAMOS CONTINUANDO LA HISTORIA!!!
 }
 
-// interacción con el mouse para ir pasando de pantalla a pantallas:
-
+//ir pasando de pantalla a pantallas:
 function mouseClicked() {
   userStartAudio();
   avisosonido = false;
@@ -114,96 +122,108 @@ function mouseClicked() {
       }
     }
   }
-
-  // pantalla 1: paquete
+//pantalla paquete
   else if (pantalla === 1) {
     clickear(360, 260, 130, 80, 2);
   }
-
-  // pantalla 2: abrir paquete
+//pantalla abrir paquete
   else if (pantalla === 2) {
     clickear(180, 230, 320, 150, 3);
   }
-
-  // pantalla 3: decisiones del diario
+//pantalla decisiones del diario
   else if (pantalla === 3) {
     clickear(410, 120, 214, 187, 4);
     clickear(650, 173, 140, 119, 5);
   }
-
-  // pantalla 4: tres caminos
+//pantalla tres caminos
   else if (pantalla === 4) {
-    // camino escondido
+    //camino escondido
     clickear(10, 40, 250, 360, 6);
-
-    // camino de arriba
+    //camino de arriba
     clickear(330, 25, 220, 375, 9);
-
-    // puente
+    //puente
     clickear(550, 40, 250, 400, 8);
   }
-
-  // pantalla 5: final malo
+//pantalla final malo
   else if (pantalla === 5) {
     clickear(260, 325, 260, 70, 0);
   }
-
-  // camino escondido
+//camino escondido
   else if (pantalla === 6) {
-    // correr
+    //correr
     clickear(520, 320, 120, 110, 7);
-
-    // cuerpo a tierra
+    //cuerpo a tierra
     clickear(660, 320, 120, 110, 11);
   }
-
-  // te descubren
+//te descubren
   else if (pantalla === 7) {
     clickear(260, 325, 260, 70, 9);
   }
-
-  // te moris x el puente
+//te moris x el puente
   else if (pantalla === 8) {
     clickear(260, 325, 260, 70, 0);
   }
-
-  // te llevan dormido
+//te llevan dormido
   else if (pantalla === 9) {
     clickear(260, 325, 260, 70, 13);
   }
-
-  // te matan de un disparo
+//te matan de un disparo
   else if (pantalla === 10) {
     clickear(260, 325, 260, 70, 0);
   }
-
-  //llegas a el avion
+//llegas al avion
   else if (pantalla === 11) {
-    // click en el avión
+   // click en el avión
     clickear(220, 70, 540, 280, 12);
   }
-
-  //llegas a la puerta de la cueva
+//llegas a la puerta de la cueva
   else if (pantalla === 12) {
-    clickear(485, 45, 215, 325, 13);
+    clickear(505, 65, 215, 225, 16); 
   }
-
-  // despertas atado junto a tu padre
+//henry e indy despiertan atados
   else if (pantalla === 13) {
-
-    // Daga
-    clickear(75, 290, 75, 120, 15);   // x, y, ancho, alto, pantalla destino
-
-    // Mechero
-    clickear(156, 335, 79, 25, 14);   // ajustá el alto si hace falta
+   0 //daga
+    clickear(75, 290, 75, 120, 15);   // x, y, ancho, alto, pantalla destino!!!!!
+    //mechero
+    clickear(156, 335, 79, 25, 14); 
   }
-
-  //logras derrotar a los solados
+  //derrotas a los solados
   else if (pantalla === 14) {
+    //puerta del templo
+    clickear(620, 60, 180, 320, 17); // 
   }
-
-  //los soldados descubren q te queres escapar y te matan
+//los soldados descubren q te queres escapar y te matan
   else if (pantalla === 15) {
     clickear(260, 325, 260, 70, 13);
+  }
+//INDY FRENTE AL ACERTIJO
+  else if (pantalla === 16) {
+    //VIENTO (x: 225, y: 220, ancho: 100, alto: 110)
+    clickear(225, 220, 100, 110, 18);
+    //SOL (x: 355, y: 220, ancho: 105, alto: 110)
+    clickear(355, 220, 105, 110, 20);
+    //ESPIRAL (x: 490, y: 220, ancho: 105, alto: 110)
+    clickear(490, 220, 105, 110, 20);
+  }
+//INDY Y SU PADRE FRENTE A ACERTIJO
+  else if (pantalla === 17) {
+    //VIENTO
+    clickear(225, 220, 100, 110, 18);
+    //SOL
+    clickear(355, 220, 105, 110, 19);
+    //ESPIRAL
+    clickear(490, 220, 105, 110, 19);  
+  }
+  //GANÁS
+  else if (pantalla === 18) {
+    clickear(260, 325, 260, 70, 0);
+  }
+  //PERDÉS
+  else if (pantalla === 19) {
+    clickear(260, 325, 260, 70, 0);
+  }
+  //MUERE INDY SOLO
+  else if (pantalla === 20) {
+    clickear(260, 325, 260, 70, 0);
   }
 }
