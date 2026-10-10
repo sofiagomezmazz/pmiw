@@ -67,9 +67,6 @@ function setup() {
   textFont('Arial');
   textSize(24);
   noStroke();
-  console.log("Cantidad de lineas:", mistextos.length);
-  console.log("Primera linea:", mistextos[0]);
-  console.log("Textos cargados:", mistextos);
 }
 
 function draw() {

@@ -9,7 +9,7 @@ function pantalla1() {
   let diarioTexto = mistextos[0] + "\n" + mistextos[1] + "\n" + mistextos[2];
   text(diarioTexto, width / 2, 32);
 
-  // si el mousse está sobre el paquete
+  //si el mousse está sobre el paquete
   if (mouseX > 360 && mouseX < 490 && mouseY > 260 && mouseY < 340) {
     image(paquete, 0, 0, width, height);
     fill(0, 200);
@@ -118,7 +118,7 @@ function pantalla4() {
     text(mistextos[15], width / 2, height - 15);
   }  
   
-  // TEXTO NO INTERACTIVO DE LA HISTORIA
+  //TEXTO NO INTERACTIVO
   fill(0, 175);
   rect(55, 10, 690, 42, 6);
   fill(255);
@@ -129,17 +129,19 @@ function pantalla4() {
 
 }
 
-//PANTALLA 5 PRIMER FINAL. FINAL MALO: NAZIS Y HENRY JONES CULPABLES.
+//PRIMER FINAL. FINAL MALO: NAZIS Y HENRY JONES CULPABLES.
 function pantalla5() {
   image(imagenes[5], 0, 0, width, height);
 
-  // Texto explicativo del final
+  //TEXTO EXPLICATIVO DEL FINAL
   fill(0, 175);
   rect(55, 25, 690, 60, 6);
   fill(255);
   textSize(16);
   textAlign(CENTER, CENTER);
   text(mistextos[10], width / 2, 55);
+
+
 
   if (mouseEnBoton(260, 325, 260, 70)) {
     tint(255, 255);
@@ -169,11 +171,11 @@ clickear(410, 120, 214, 187, 5);
 187: Alto total del área interactiva (cuántos píxeles se extiende hacia abajo)
 } */
 
-// PANTALLA 6 CAMINO ESCONDIDO
+//CAMINO ESCONDIDO
 function pantalla6() {
   image(imagenes[6], 0, 0, width, height);
 
-  // texto de la historia
+  //TEXTO
   fill(0, 175);
   rect(55, 15, 690, 70, 6);
   fill(255);
@@ -182,7 +184,7 @@ function pantalla6() {
   let diarioTexto = mistextos[19] + "\n" + mistextos[20] + "\n" + mistextos[21];
   text(diarioTexto, width / 2, 22);
 
-  // ===== BOTÓN CORRER (abajo derecha - izquierda) =====
+  //BOTÓN OPCI´+ONN CORRER
   if (mouseEnBoton(520, 320, 120, 110)) {
     tint(255, 255);
   } else {
@@ -201,10 +203,9 @@ function pantalla6() {
   noTint();
 }
 
-// PANTALLA 7 TE DESCUBREN
+// PANTALLA TE DESCUBREN
 function pantalla7() {
   image(imagenes[7], 0, 0, width, height);
-
 if (mouseEnBoton(260, 325, 260, 70)) {
     tint(255, 255);
   } else {
@@ -221,10 +222,9 @@ if (mouseEnBoton(260, 325, 260, 70)) {
   text(diarioTexto, width / 2, 32);
 }
 
-// PANTALLA 8 TE CAÉS DEL PUENTE (FINAL MALO)
+//TE CAÉS DEL PUENTE (FINAL MALO)
 function pantalla8() {
   image(imagenes[8], 0, 0, width, height);
-
   if (mouseEnBoton(260, 325, 260, 70)) {
     tint(255, 255);
   } else {
@@ -233,6 +233,7 @@ function pantalla8() {
   image(botonreini, 250, 280, 280, 160);
   noTint();
 }
+
 //SECUESTRO
 function pantalla9() {
   image(imagenes[9], 0, 0, width, height);
@@ -247,7 +248,7 @@ if (mouseEnBoton(260, 325, 260, 70)) {
 }
 
 
-//Te disparan 
+//DISPARO 
 function pantalla10() {
 image(imagenes[10], 0, 0, width, height);
 if (mouseEnBoton(260, 325, 260, 70)) {
@@ -259,16 +260,14 @@ if (mouseEnBoton(260, 325, 260, 70)) {
   noTint();
 
 }
+
+//ENCONTRAS UN AVIÓN
 function pantalla11() {
   image(imagenes[11], 0, 0, width, height);
-
-  // Área del avión (ajustá estos números si hace falta)
-  // x, y, ancho, alto del avión
+  //REFERENCIAS: x, y, ancho, alto del avión
   if (mouseX > 220 && mouseX < 760 && mouseY > 70 && mouseY < 350) {
-    // cuando el mouse está encima → mostramos el avión con brillo
+    //AVION CON BRILLO
     image(avion, 80, 15, 700, 390);
-    
-    // texto opcional abajo
     fill(255, 230, 140);
     textSize(16);
     textAlign(CENTER, BOTTOM);
@@ -277,43 +276,35 @@ function pantalla11() {
 }
 
 
-
+//EL AVIÓN TE DEJA EN LA PUERTA DEL TEMPLO DEL SANTO GRIAL!!
 function pantalla12() {
   image(imagenes[12], 0, 0, width, height);
-
-
 if (mouseX > 485 && mouseX < 700 && mouseY > 45 && mouseY < 370) {
-  // Mouse encima de la entrada → mostramos la puerta con brillo
+  // IAMGEN DE LA PUERTA CON BRILLO
   image(puerta, 485, 44, 240, 266);
-    
-    // texto opcional abajo
     fill(255, 230, 140);
     textSize(16);
     textAlign(CENTER, BOTTOM);
     text("Entrar a la cueva", width / 2, height - 15);
   }
-
 }
 
+//BIFURCACIÓN: TE SECUESTRARON LOS NAZIS Y TE TENÉS QUE LIBERAR
 function pantalla13() {
   image(imagenes[13], 0, 0, width, height);
-  
-  
    if (mouseX > 75 && mouseX < 150 && mouseY > 290 && mouseY < 410) {
-  // daga
+  //DAGA
   image(daga, 95, 335, 80, 75);
-    
-    // texto opcional abajo
     fill(255, 230, 140);
     textSize(16);
     textAlign(CENTER, BOTTOM);
     text("Intentar escapar con la daga", width / 2, height - 15);
     }
  else if (mouseX > 156 && mouseX < 235 && mouseY > 335 && mouseY < 360) {
-  //mechero
+  //MECHERO
  image(mechero, 132, 325, 55, 55);
     
-    // texto opcional abajo
+    //texto de la opción en la parte inferior de la pantalla
     fill(255, 230, 140);
     textSize(16);
     textAlign(CENTER, BOTTOM);
@@ -322,10 +313,8 @@ function pantalla13() {
  
 }
 
-
 function pantalla14() {
 image(imagenes[14], 0, 0, width, height);
-
 
 }
 
