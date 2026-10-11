@@ -117,7 +117,7 @@ function mouseClicked() {
     musicaintro.setVolume(0.3);
     musicaintro.loop();
   }
-
+  
   //LOS DATOS DE CLICKEAR SON (x, y, ancho, alto, pantalladirigida)!!
   if (pantalla === 0) {
     if (botonComenzar) {

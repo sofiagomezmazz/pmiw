@@ -12,12 +12,10 @@ function pantalla1() {
   //si el mousse está sobre el paquete
   if (mouseX > 360 && mouseX < 490 && mouseY > 260 && mouseY < 340) {
     image(paquete, 0, 0, width, height);
-    fill(0, 200);
-    rect(mouseX - 80, mouseY - 45, 160, 32, 6);
-    fill(255);
-    textSize(13);
+    fill(219,195,55);
+    textSize(17);
     textAlign(CENTER, CENTER);
-    text(mistextos[3], mouseX, mouseY - 29);
+    text(mistextos[3], width/2, 430);
   }
 }
 
@@ -40,7 +38,6 @@ function pantalla2() {
     text("Abrir el paquete", width/2, height-15);fill(255);
     textSize(13);
     textAlign(CENTER, CENTER);
-    text(mistextos[5], mouseX, mouseY - 29);
     fill(0, 175);
     rect(55, 25, 690, 60, 6);
     fill(255);
@@ -63,7 +60,11 @@ function pantalla3() {
   let diarioTexto = mistextos[6] + "\n" + mistextos[7] + "\n" + mistextos[8];
   text(diarioTexto, width/2, 28);
   textSize(18);
-  text(mistextos[9], width/2, 300);
+  fill(0, 175);
+  rect(width/2-200,290,400,40,6);
+  fill(255);
+  textAlign(CENTER, CENTER);
+  text(mistextos[9], width/2, 310);
   //HASTA ACÁ EL TEXTO 
 
   // si el mouse está sobre la imagen de las catacumbas, se iluminan!!
