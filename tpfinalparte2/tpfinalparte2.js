@@ -1,3 +1,4 @@
+//esta puede llegar a ser la pestaña juego, tengo que ver boen porqu eno entiendo nada.
 // Comisión: 4
 // Profesor: Leonardo Garay
 // Juego: Indiana Jones y el Santo Grial
@@ -16,6 +17,9 @@ let acciones = [];
 const NOMBRES = [];
 const FRAMES_POR_ACCION = [];
 
+
+//cosas que anoté de la clase: let: Juego = new Juego();
+//diferencia netre clase y objeto: clase es el molde y el objeto es lo tangible.
 function setup() {
   createCanvas(800, 400);
   indyJones = new indianaJones();
@@ -25,6 +29,8 @@ function setup() {
 }
 
 function draw() {
+  Juego.dibujar
+  
   background(35);
   textFont("monospace");
 
