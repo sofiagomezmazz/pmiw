@@ -1,45 +1,78 @@
+// Comisión: 4
+// Profesor: Leonardo Garay
+// Juego: Indiana Jones y el Santo Grial
+// Minijuego: Frogger
+// Alumnos: Sofía Gómez y Natanael Grilli
 
-let indy;
-let grial;
+let pantalla = 0;
 let imagenes = [];
+//variables para los objetos:
+let indyJones;
+let obstaculo;
+let boton;
+let grial;
+//variables animación
+let acciones = [];
+const NOMBRES = [];
+const FRAMES_POR_ACCION = [];
 
 function setup() {
   createCanvas(800, 400);
-  indy = new Indy();
-  grial = new Grial();
+  indyJones = new indianaJones();
+  //faltan el resto de los objetos
+  textFont("monospace");
+  textAlign(CENTER, CENTER);
 }
 
 function draw() {
-  image(imagenes[0], 0, 0, 800, 400);
-  indy.mover();
-  indy.dibujar();
-  grial.dibujar();
+  background(35);
+  textFont("monospace");
 
-  if (indy.x > 730) {
+  if (pantalla === 0) {//pantalla de inicio con las intrucciones
+    image(imagenes[0], 0, 0, width, height);
+    fill(0, 190);
+    noStroke();
+    rect(25, 15, 750, 370, 8);
+    fill(255, 220, 140);
+    textSize(25);
+    text("INDIANA JONES", width / 2, 45);
+    textSize(18);
+    text("Y EL SANTO GRIAL", width / 2, 78);
     fill(255);
-    textSize(24);
-    text("¡Encontraste el Grial!", 250, 100);
+    textSize(13);
+    text("INSTRUCCIONES", width / 2, 125);
+    textSize(12);
+    text( "Usá las flechas del teclado para esquivar los obstáculos\n" + "y llegá hasta el Santo Grial.", width/2, 155);
+
+    
+    //botón para iniciar el juego
+    if (botonClick(280, 290, 240, 55)) {
+    fill(255, 220, 140);
+    stroke(255);
+    strokeWeight(3);
+  } else {
+    fill(101, 67, 33);
+    stroke(255, 220, 140);
+    strokeWeight(2);
+  }
+  rect(280, 290, 240, 55, 5);
+noStroke();
+
+  if (botonClick(280, 290, 240, 55)) {
+    fill(45);
+    textSize(17);
+    text("¡COMENZAR!", 400, 317);
+  } else {
+    fill(255);
+    textSize(16);
+    text("COMENZAR", 400, 317);
+} else {
+    //pantalla del minijuego (a desarrollar)
   }
 }
 
-class Indy {
-  constructor() {
-    this.x = 50;
-    this.y = 300;
-  }
-
-  mover() {
-    if (keyIsDown(RIGHT_ARROW)) this.x += 3;
-    if (keyIsDown(LEFT_ARROW)) this.x -= 3;
-  }
-
-  dibujar() {
-    image(imagenes[1], this.x, this.y, 40, 50);
-  }
-}
-
-class Grial {
-  dibujar() {
-    image(imagenes[2], 730, 280, 40, 50);
+function mouseClicked() {
+  if (pantalla === 0 && botonClick(botonX, botonY, botonAncho, botonAlto)) {
+    pantalla = 1;
   }
 }
