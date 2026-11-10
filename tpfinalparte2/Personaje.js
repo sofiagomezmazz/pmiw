@@ -26,20 +26,24 @@ class Jones {
     }
   }
 
-  mostrar() {
-    if (this.direccion === "adelante") {
-      image(jonesAdelante[0], this.x, this.y, this.tam, this.tam);
-    }
-    else if (this.direccion === "atras") {
-      image(jonesAtras[0], this.x, this.y, this.tam, this.tam);
-    }
-    else if (this.direccion === "izquierda") {
-      image(jonesIzquierda[0], this.x, this.y, this.tam, this.tam);
-    }
-    else if (this.direccion === "derecha") {
-      image(jonesDerecha[0], this.x, this.y, this.tam, this.tam);
-    }
+mostrar() {
+  if (this.direccion === "adelante") {
+    let frame = elegirFrame(jonesAdelante, 24);
+    image(frame, this.x, this.y, this.tam, this.tam);
   }
+  else if (this.direccion === "atras") {
+    let frame = elegirFrame(jonesAtras, 24);
+    image(frame, this.x, this.y, this.tam, this.tam);
+  }
+  else if (this.direccion === "izquierda") {
+    let frame = elegirFrame(jonesIzquierda, 24);
+    image(frame, this.x, this.y, this.tam, this.tam);
+  }
+  else if (this.direccion === "derecha") {
+    let frame = elegirFrame(jonesDerecha, 24);
+    image(frame, this.x, this.y, this.tam, this.tam);
+  }
+}
 
   reiniciar(x, y) {
     this.x = x;

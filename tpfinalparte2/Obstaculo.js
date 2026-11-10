@@ -43,17 +43,19 @@ class Enemigo {
       this.x = width;
     }
   }
-  mostrar() {
-    if (this.dir === -1) { 
+
+mostrar() {
+  let frame = elegirFrame(this.frames, 12);
 //CON ESTO ME PERMITO DAR VUELTA LAS IMÁGENES EN CASO DE QUE EL ENEMIGO ESTÉ YENDO PARA EL OTRO LADO
-      push();
-      translate(this.x + this.w, this.y);
-      scale(-1, 1);
-      image(this.frames[0], 0, 0, this.w, this.h);
-      pop();
-    }
-    else {
-      image(this.frames[0], this.x, this.y, this.w, this.h);
-    }
+  if (this.dir === -1) {
+    push();
+    translate(this.x+this.w, this.y);
+    scale(-1, 1); //ACÁ DOY VUELTA LA IMAGEN
+    image(frame, 0, 0, this.w, this.h);
+    pop();
   }
+  else {
+    image(frame, this.x, this.y, this.w, this.h);
+  }
+}
 }
