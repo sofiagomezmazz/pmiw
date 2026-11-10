@@ -1,7 +1,16 @@
 class Juego {
   constructor() {
-    this.estado = "inicio";
-    this.jones = new Jones(width/2 - 20, 350); //JONES SIEMPRE MITAD DE LA PANTALLA ABAJO! SE MUEVE DE FORMA VERTICAL, TIENE QUE LLEGAR HASTA ARRIBA
+    this.estado = "inicio"; // ACÁ DECLARO EL ESTADO INICIAL DEL JUEGO QUE DESPUÉS VA A SERVIR PARA CAMBIAR DE PANTALLAS.
+    
+    
+    
+    
+    this.jones = new Jones(width/2-20, 350); //AL CREAR UN NEW JONES SE INVOCA TODO LO QUE ESTÁ DENTRO DEL CONSUTRCTOR DE JONES. PARA ESO SIRVE CONSTRUCTOR
+    
+    
+    
+   
+
     this.enemigos = [];
     this.generarEnemigos();
   }
@@ -9,7 +18,7 @@ class Juego {
   generarEnemigos() {
     this.enemigos = [];
     //ROCA
-    this.enemigos.push(new Enemigo(80, 148, "roca", 2.3, 1));
+    this.enemigos.push(new Enemigo(80, 148, "roca", 2.3, 1)); // x, y, tipo, velocidad, dirección, todos los datos que estan dentro de pestaña OSTÁCULOS.
     this.enemigos.push(new Enemigo(420, 148, "roca", 2.3, 1));
     //ESCORPION
     this.enemigos.push(new Enemigo(30, 185, "escorpion", 2.1, 1));
@@ -20,7 +29,7 @@ class Juego {
     //ARAÑA
     this.enemigos.push(new Enemigo(80, 275, "arana", 2.8, -1));
     this.enemigos.push(new Enemigo(420, 275, "arana", 2.8, -1));
-    //COCODRILO q se duerme...
+    //COCODRILO (q se duerme...)
     this.enemigos.push(new Enemigo(0, 110, "cocodrilo", 1.7, 1));
     this.enemigos.push(new Enemigo(300, 110, "cocodrilo", 1.7, 1));
   }
@@ -28,10 +37,10 @@ class Juego {
   actualizar() {
     if (this.estado === "jugando") {
       for (let i = 0; i < this.enemigos.length; i++) {
-        this.enemigos[i].mover(); // el movimiento de los enemigos ES GLOBAL
+        this.enemigos[i].mover(); //ASÍ EL MOVIMIENTO DE LOS ENEMIGOS ES GLOBAL
       }
       this.revisarColisiones();
-      if (this.jones.y < 40) {
+      if (this.jones.y < 40) { //SE LLEGA A LA CIMA = VICTORIA
         this.estado = "ganado";
       }
     }
@@ -39,14 +48,14 @@ class Juego {
   
   
 //DAMOS INICIO AL ÁREA DE COLISIONESSSS 
-revisarColisiones() {
+revisarColisiones() { //AL RECORRER EL ARREGLO ESTAMOS REVISANDO SI HUBO COLISIÓN EN CADA ENEMIGO POR SEPARADO
   for (let i = 0; i < this.enemigos.length; i++) {
       if (this.colision(this.jones, this.enemigos[i])) {
         this.estado = "perdido";
       }
     }
   }
-//COMPROBAR SI EFECTIVAMENTE SE COLISIONÓ
+//COMPROBAR SI EFECTIVAMENTE SE COLISIONÓ. DATO a + DATO B
 colision(a, b) {
   return dist(a.x, a.y, b.x, b.y) < 30;
 }
@@ -72,17 +81,15 @@ colision(a, b) {
     }
   }
 
-  //PANTALLA DE INICIO
+//PANTALLA DE INICIO
   pantallaInicio() {
     fill(0, 180);
     rect(0, 0, width, height);
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(16);
-    text("PRESIONA "ENTER" PARA EMPEZAR", width/2, 280);
+    text("PRESIONA ENTER PARA EMPEZAR", width/2, 280);
   }
-
-
 //SI GANO
   pantallaVictoria() {
     fill(0, 180);
@@ -93,7 +100,7 @@ colision(a, b) {
     text("ganaste", width/2, height/2-20);
     fill(255);
     textSize(16);
-    text("PRESIONA "R" PARA REINICIAR", width/2, height/2+30);
+    text("PRESIONA R PARA REINICIAR", width/2, height/2+30);
   }
 //SI PIERDO
   pantallaDerrota() {
@@ -106,7 +113,7 @@ colision(a, b) {
 
     fill(255);
     textSize(16);
-    text("PRESIONA "R" PARA REINICIAR", width/2,height/2+30);
+    text("PRESIONA R PARA REINICIAR", width/2,height/2+30);
   }
 //REINICIO
   reiniciar() {

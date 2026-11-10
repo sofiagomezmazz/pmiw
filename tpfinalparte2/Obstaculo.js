@@ -3,7 +3,7 @@ class Enemigo {
     this.x = x;
     this.y = y;
     this.tipo = tipo;
-    this.vel = velocidad;
+    this.vel = velocidad; // lo abrevié
     this.dir = direccion;
 
 //TIPOS DE ENEMIGOS
@@ -34,18 +34,18 @@ class Enemigo {
     }
   }
   mover() {
-    //CAMBIA LA POSICIÓN SEGUN LA VELOCIDAD Y DIRECCIÓN
-    this.x += this.vel * this.dir;
-    //SI SALE DE LA PANTALLA VUELVE A APARECER DEL OTRO LADO
+    this.x += this.vel*this.dir;//CAMBIO LA DATA DE X EN BASE A LOS PARÁMETROS QUE YO PUSE AL CREAR LA CLASE ENEMIGO.
+    
     if (this.dir === 1 && this.x > width) {
-      this.x = -this.w;
+      this.x = -this.w; //EL ENEMIGO VUELVE AL INICIO, ENTRA DESDE FUERA DE LA PANTALLA
     }
     if (this.dir === -1 && this.x < -this.w) {
       this.x = width;
     }
   }
   mostrar() {
-    if (this.dir === -1) {
+    if (this.dir === -1) { 
+//CON ESTO ME PERMITO DAR VUELTA LAS IMÁGENES EN CASO DE QUE EL ENEMIGO ESTÉ YENDO PARA EL OTRO LADO
       push();
       translate(this.x + this.w, this.y);
       scale(-1, 1);

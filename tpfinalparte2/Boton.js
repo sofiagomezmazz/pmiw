@@ -1,3 +1,5 @@
+/*
+
 class Boton {
   constructor(x, y, w, h, texto) {
     this.x = x;
@@ -23,3 +25,4 @@ clickeado(mx, my) {
   }
 }
 }
+*/

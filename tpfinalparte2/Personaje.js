@@ -9,11 +9,8 @@ class Jones {
   mover(dx, dy) {
     this.x += dx;
     this.y += dy;
-
-//PARA QUE JONES NO SE SALGA DE LA PANTALLA
-    this.x = constrain(this.x, 0, width - this.tam);
-    this.y = constrain(this.y, 0, height - this.tam);
-
+    this.x = constrain(this.x, 0, width-this.tam);
+    this.y = constrain(this.y, 0, height-this.tam);
 //GUARDO HACIA DONDE SE MOVIO
     if (dy < 0) {
       this.direccion = "atras";

@@ -1,11 +1,11 @@
-//esta puede llegar a ser la pestaña juego, tengo que ver boen porqu eno entiendo nada.
+//esta puede llegar a ser la pestaña juego, tengo que ver bIEN...
 // Comisión: 4
 // Profesor: Leonardo Garay
 // Juego: Indiana Jones y el Santo Grial
 // Minijuego: Frogger
 // Alumnos: Sofía Gómez y Natanael Grilli
 
-//primero se crea una variable de juego NO OLVIDAR!!!
+
 let juego;
 //variables para JONES
 let jonesAdelante = [];
@@ -27,12 +27,13 @@ function setup() {
   juego = new Juego();
 }
 
+
 function draw() {
   juego.actualizar();
   juego.mostrar();
 }
 
-function keyPressed() { //CON KEYPRESSED EL MOVIMIENTO ES DE A 1, O SEA, PARA AVANZAR SE DEBE PRESIONAR MÚLTIPLES VECES...
+function keyPressed() {
   //EMPEZAR EL JUEGO
   if (juego.estado === "inicio" && keyCode === ENTER) {
     juego.estado = "jugando";
