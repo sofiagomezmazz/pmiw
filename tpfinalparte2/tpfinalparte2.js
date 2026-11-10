@@ -1,4 +1,3 @@
-//esta puede llegar a ser la pestaña juego, tengo que ver bIEN...
 // Comisión: 4
 // Profesor: Leonardo Garay
 // Juego: Indiana Jones y el Santo Grial
