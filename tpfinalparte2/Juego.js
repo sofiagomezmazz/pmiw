@@ -5,7 +5,7 @@ class Juego {
     
     
     
-    this.jones = new Jones(width/2-20, 350); //AL CREAR UN NEW JONES SE INVOCA TODO LO QUE ESTÁ DENTRO DEL CONSUTRCTOR DE JONES. PARA ESO SIRVE CONSTRUCTOR
+    this.jones = new Jones(width/2-20, 350); //AL CREAR UN NEW JONES SE INVOCA TODO LO QUE ESTÁ DENTRO DEL CONSUTRCTOR DE JONES.
     
     
     
@@ -47,7 +47,7 @@ class Juego {
   }
   
   
-//DAMOS INICIO AL ÁREA DE COLISIONESSSS 
+
 revisarColisiones() { //AL RECORRER EL ARREGLO ESTAMOS REVISANDO SI HUBO COLISIÓN EN CADA ENEMIGO POR SEPARADO
   for (let i = 0; i < this.enemigos.length; i++) {
       if (this.colision(this.jones, this.enemigos[i])) {
@@ -97,7 +97,7 @@ colision(a, b) {
     fill(100, 255, 100);
     textAlign(CENTER, CENTER);
     textSize(36);
-    text("ganaste", width/2, height/2-20);
+    text("¡GANASTE!", width/2, height/2-20);
     fill(255);
     textSize(16);
     text("PRESIONA R PARA REINICIAR", width/2, height/2+30);
@@ -109,8 +109,7 @@ colision(a, b) {
     fill(255, 80, 80);
     textAlign(CENTER, CENTER);
     textSize(36);
-    text("perdiste", width/2,height/2-20);
-
+    text("¡PERDISTE!", width/2,height/2-20);
     fill(255);
     textSize(16);
     text("PRESIONA R PARA REINICIAR", width/2,height/2+30);
