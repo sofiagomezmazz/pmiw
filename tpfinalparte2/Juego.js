@@ -57,11 +57,11 @@ class Juego {
 
   //CLICKEAR LOS BOTONES
   mousePressed() {
-    if (this.estado === "inicio" && this.botonInicio.clickeado(mouseX, mouseY)) {
+    if (this.estado === "inicio" && this.botonInicio.areaBoton(mouseX, mouseY)) {
       this.estado = "jugando";
     }
 
-    if ((this.estado === "ganado" || this.estado === "perdido") && this.botonReiniciar.clickeado(mouseX, mouseY)) {
+    if ((this.estado === "ganado" || this.estado === "perdido") && this.botonReiniciar.areaBoton(mouseX, mouseY)) {
       this.reiniciar();
     }
   }

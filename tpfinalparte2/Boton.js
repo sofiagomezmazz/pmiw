@@ -7,9 +7,8 @@ class Boton {
     this.texto = texto;
   }
 
-
 mostrar() {
-  if (this.clickeado(mouseX, mouseY)) {
+  if (this.areaBoton(mouseX, mouseY)) {
     fill(120, 80, 40);
   }
   else {
@@ -27,7 +26,7 @@ mostrar() {
 }
 
 
-clickeado(mx, my) {
+areaBoton(mx, my) {
   if (dist(mx, my, this.x+this.w/2, this.y+this.h/2) < 30) {
     return true;
   }

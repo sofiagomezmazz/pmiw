@@ -52,7 +52,6 @@ function keyPressed() {
   }
 }
 
-
 //CLICKEAR LOS BOTONES
 function mousePressed() {
   juego.mousePressed();
