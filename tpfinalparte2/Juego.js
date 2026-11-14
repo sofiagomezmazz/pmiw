@@ -53,9 +53,7 @@ class Juego {
   colision(a, b) {
     return dist(a.x, a.y, b.x, b.y) < 30;
   }
-
-
-  //CLICKEAR LOS BOTONES
+  
   mousePressed() {
     if (this.estado === "inicio" && this.botonInicio.areaBoton(mouseX, mouseY)) {
       this.estado = "jugando";
@@ -67,7 +65,6 @@ class Juego {
   }
 
 
-  //ZONA DE PANTALLAS
   mostrar() {
     image(fondo, 0, 0, width, height);
 
@@ -89,7 +86,6 @@ class Juego {
   }
 
 
-  //PANTALLA DE INICIO
 pantallaInicio() {
   fill(0, 180);
   rect(0, 0, width, height);
