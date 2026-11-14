@@ -3,8 +3,8 @@
 // Juego: Indiana Jones y el Santo Grial
 // Minijuego: Frogger
 // Alumnos: Sofía Gómez y Natanael Grilli
-// Video: 
-
+// Video Gómez Sofía: https://youtu.be/seSA-L7iyFA?si=zyi1q0EADZ9RTCH1
+// Video Natanael Grilli: 
 
 let juego;
 //variables para JONES
