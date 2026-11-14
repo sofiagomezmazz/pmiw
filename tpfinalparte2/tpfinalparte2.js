@@ -3,6 +3,7 @@
 // Juego: Indiana Jones y el Santo Grial
 // Minijuego: Frogger
 // Alumnos: Sofía Gómez y Natanael Grilli
+// Video: 
 
 
 let juego;
@@ -19,7 +20,7 @@ let serpientes = [];
 let cocodrilos = [];
 //IMÁGENES VARIAS
 let fondo;
-
+let logo;
 
 function setup() {
   createCanvas(800, 400);
@@ -32,18 +33,9 @@ function draw() {
   juego.mostrar();
 }
 
+
+//MOVIMIENTO DE JONES
 function keyPressed() {
-  //EMPEZAR EL JUEGO
-  if (juego.estado === "inicio" && keyCode === ENTER) {
-    juego.estado = "jugando";
-  }
-  //REINICIAR CUANDO EL USUARIO GANA O PIERDE
-  if (juego.estado === "ganado" || juego.estado === "perdido") {
-    if (key === 'r' || key === 'R') {
-      juego.reiniciar();
-    }
-  }
-  //MOVIMIENTO DE JONES
   if (juego.estado === "jugando") {
     if (keyCode === UP_ARROW) {
       juego.jones.mover(0, -40);
@@ -58,4 +50,10 @@ function keyPressed() {
       juego.jones.mover(40, 0);
     }
   }
+}
+
+
+//CLICKEAR LOS BOTONES
+function mousePressed() {
+  juego.mousePressed();
 }

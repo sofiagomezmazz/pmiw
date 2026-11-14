@@ -11,7 +11,8 @@ class Jones {
     this.y += dy;
     this.x = constrain(this.x, 0, width-this.tam);
     this.y = constrain(this.y, 0, height-this.tam);
-//GUARDO HACIA DONDE SE MOVIO
+
+    //GUARDO HACIA DONDE SE MOVIO
     if (dy < 0) {
       this.direccion = "atras";
     }
@@ -26,21 +27,28 @@ class Jones {
     }
   }
 
+
+elegirFrame(frames) {
+  let indice = floor(frameCount/24) % frames.length;
+  return frames[indice];
+}
+
+
 mostrar() {
   if (this.direccion === "adelante") {
-    let frame = elegirFrame(jonesAdelante, 24);
+    let frame = this.elegirFrame(jonesAdelante);
     image(frame, this.x, this.y, this.tam, this.tam);
   }
   else if (this.direccion === "atras") {
-    let frame = elegirFrame(jonesAtras, 24);
+    let frame = this.elegirFrame(jonesAtras);
     image(frame, this.x, this.y, this.tam, this.tam);
   }
   else if (this.direccion === "izquierda") {
-    let frame = elegirFrame(jonesIzquierda, 24);
+    let frame = this.elegirFrame(jonesIzquierda);
     image(frame, this.x, this.y, this.tam, this.tam);
   }
   else if (this.direccion === "derecha") {
-    let frame = elegirFrame(jonesDerecha, 24);
+    let frame = this.elegirFrame(jonesDerecha);
     image(frame, this.x, this.y, this.tam, this.tam);
   }
 }

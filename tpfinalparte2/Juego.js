@@ -1,20 +1,14 @@
 class Juego {
   constructor() {
     this.estado = "inicio"; // ACÁ DECLARO EL ESTADO INICIAL DEL JUEGO QUE DESPUÉS VA A SERVIR PARA CAMBIAR DE PANTALLAS.
-    
-    
-    
-    
     this.jones = new Jones(width/2-20, 350); //AL CREAR UN NEW JONES SE INVOCA TODO LO QUE ESTÁ DENTRO DEL CONSUTRCTOR DE JONES.
-    
-    
-    
-   
-
     this.enemigos = [];
     this.generarEnemigos();
+    this.botonInicio = new Boton(width/2-100, 260, 200, 45, "EMPEZAR");
+    this.botonReiniciar = new Boton(width/2-100, height/2+50, 200, 45, "REINICIAR");
   }
-  //los enemigos van dentro de un arreglo y ya están declarados en la pestaña de obtáculos. LA DINÁMICA ES IGUAL A LA DE LA ANIMACIÓN FOR USAR .PUSH
+
+  //los enemigos van dentro de un arreglo y ya están declarados en la pestaña de obtáculos. LA DINÁMICA ES IGUAL A LA DE LA ANIMACIÓN (.PUSH)
   generarEnemigos() {
     this.enemigos = [];
     //ROCA
@@ -45,29 +39,42 @@ class Juego {
       }
     }
   }
-  
-  
 
-revisarColisiones() { //AL RECORRER EL ARREGLO ESTAMOS REVISANDO SI HUBO COLISIÓN EN CADA ENEMIGO POR SEPARADO
-  for (let i = 0; i < this.enemigos.length; i++) {
+
+  revisarColisiones() { //AL RECORRER EL ARREGGLO ESTAMOS REVISANDO SI HUBO COLISIÓN EN CADA ENEMIGO POR SEPARADO
+    for (let i = 0; i < this.enemigos.length; i++) {
       if (this.colision(this.jones, this.enemigos[i])) {
         this.estado = "perdido";
       }
     }
   }
-//COMPROBAR SI EFECTIVAMENTE SE COLISIONÓ. DATO a + DATO B
-colision(a, b) {
-  return dist(a.x, a.y, b.x, b.y) < 30;
-}
 
-//ZONA DE PANTALLAS
+  //COMPROBAR SI EFECTIVAMENTE SE COLISIONÓ. DATO a + DATO B
+  colision(a, b) {
+    return dist(a.x, a.y, b.x, b.y) < 30;
+  }
+
+
+  //CLICKEAR LOS BOTONES
+  mousePressed() {
+    if (this.estado === "inicio" && this.botonInicio.clickeado(mouseX, mouseY)) {
+      this.estado = "jugando";
+    }
+
+    if ((this.estado === "ganado" || this.estado === "perdido") && this.botonReiniciar.clickeado(mouseX, mouseY)) {
+      this.reiniciar();
+    }
+  }
+
+
+  //ZONA DE PANTALLAS
   mostrar() {
     image(fondo, 0, 0, width, height);
+
     if (this.estado === "inicio") {
       this.pantallaInicio();
     }
     else if (this.estado === "jugando") {
-      //
       for (let i = 0; i < this.enemigos.length; i++) {
         this.enemigos[i].mostrar();
       }
@@ -81,40 +88,41 @@ colision(a, b) {
     }
   }
 
-//PANTALLA DE INICIO
-  pantallaInicio() {
-    fill(0, 180);
-    rect(0, 0, width, height);
-    fill(255);
-    textAlign(CENTER, CENTER);
-    textSize(16);
-    text("PRESIONA ENTER PARA EMPEZAR", width/2, 280);
-  }
-//SI GANO
+
+  //PANTALLA DE INICIO
+pantallaInicio() {
+  fill(0, 180);
+  rect(0, 0, width, height);
+  imageMode(CENTER);
+  image(logo, width/2, 145, 300, 120);
+  imageMode(CORNER);
+  this.botonInicio.mostrar();
+}
+
+
+  //SI GANO
   pantallaVictoria() {
     fill(0, 180);
     rect(0, 0, width, height);
     fill(100, 255, 100);
     textAlign(CENTER, CENTER);
+    textFont("monospace");
     textSize(36);
     text("¡GANASTE!", width/2, height/2-20);
-    fill(255);
-    textSize(16);
-    text("PRESIONA R PARA REINICIAR", width/2, height/2+30);
+    this.botonReiniciar.mostrar();
   }
-//SI PIERDO
+  //SI PIERDO
   pantallaDerrota() {
     fill(0, 180);
     rect(0, 0, width, height);
     fill(255, 80, 80);
     textAlign(CENTER, CENTER);
+    textFont("monospace");
     textSize(36);
     text("¡PERDISTE!", width/2,height/2-20);
-    fill(255);
-    textSize(16);
-    text("PRESIONA R PARA REINICIAR", width/2,height/2+30);
+    this.botonReiniciar.mostrar();
   }
-//REINICIO
+  //REINICIO
   reiniciar() {
     this.jones.reiniciar(width/2-20, 350);
     this.generarEnemigos();

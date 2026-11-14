@@ -10,6 +10,7 @@ function preload() {
   escorpiones = cargarAccion("escorpion", 6);
   serpientes = cargarAccion("serpiente", 6);
   cocodrilos = cargarAccion("cocodrilo", 4);
+  logo = loadImage("data/logo.png");
 }
 
 function cargarAccion(nombre, cantidad) {

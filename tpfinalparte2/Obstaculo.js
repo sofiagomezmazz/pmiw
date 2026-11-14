@@ -1,3 +1,4 @@
+
 class Enemigo {
   constructor(x, y, tipo, velocidad, direccion) {
     this.x = x;
@@ -6,7 +7,7 @@ class Enemigo {
     this.vel = velocidad; // lo abrevié
     this.dir = direccion;
 
-//TIPOS DE ENEMIGOS
+    //TIPOS DE ENEMIGOS
     if (tipo === "roca") {
       this.frames = rocas;
       this.w = 42;
@@ -33,9 +34,10 @@ class Enemigo {
       this.h = 40;
     }
   }
+
   mover() {
     this.x += this.vel*this.dir;//CAMBIO LA DATA DE X EN BASE A LOS PARÁMETROS QUE YO PUSE AL CREAR LA CLASE ENEMIGO.
-    
+
     if (this.dir === 1 && this.x > width) {
       this.x = -this.w; //EL ENEMIGO VUELVE AL INICIO, ENTRA DESDE FUERA DE LA PANTALLA
     }
@@ -44,18 +46,24 @@ class Enemigo {
     }
   }
 
-mostrar() {
-  let frame = elegirFrame(this.frames, 12);
-//CON ESTO ME PERMITO DAR VUELTA LAS IMÁGENES EN CASO DE QUE EL ENEMIGO ESTÉ YENDO PARA EL OTRO LADO
-  if (this.dir === -1) {
-    push();
-    translate(this.x+this.w, this.y);
-    scale(-1, 1); //ACÁ DOY VUELTA LA IMAGEN
-    image(frame, 0, 0, this.w, this.h);
-    pop();
+  elegirFrame() {
+    let indice = floor(frameCount / 12) % this.frames.length;
+    return this.frames[indice];
   }
-  else {
-    image(frame, this.x, this.y, this.w, this.h);
+
+  mostrar() {
+    let frame = this.elegirFrame();
+
+    //CON ESTO ME PERMITO DAR VUELTA LAS IMÁGENES EN CASO DE QUE EL ENEMIGO ESTÉ YENDO PARA EL OTRO LADO
+    if (this.dir === -1) {
+      push();
+      translate(this.x+this.w, this.y);
+      scale(-1, 1); //ACÁ DOY VUELTA LA IMAGEN
+      image(frame, 0, 0, this.w, this.h);
+      pop();
+    }
+    else {
+      image(frame, this.x, this.y, this.w, this.h);
+    }
   }
-}
 }
